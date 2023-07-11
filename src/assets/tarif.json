@@ -1,0 +1,15 @@
+{
+  "name": "Beginner",
+  "description": "Для небольшого исследования",
+  "header-img": "./img.png",
+  "header-bg-class": "orange",
+  "price": "799 ₽",
+  "base_price": "1 200 ₽",
+  "plan_price": "или 150 ₽/мес. при рассрочке на 24 мес.",
+  "advantages": [
+    "Безлимитная история запросов",
+    "Безопасная сделка",
+    "Поддержка 24/7"
+  ],
+  "active": true
+}
