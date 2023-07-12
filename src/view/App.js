@@ -11,7 +11,7 @@ function App () {
     return (
         <Layout>
             <Search/>
-            <SimpleSlider/>
+            <Carousel/>
             <img src={imgHome}/>
             <Rates/>
         </Layout>
