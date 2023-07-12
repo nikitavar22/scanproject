@@ -44,7 +44,7 @@ export default function Header () {
                         <rect opacity="0.6" width="2" height="26" transform="matrix(-1 0 0 1 2 0)" fill="#029491"/>
                     </svg>
                     <button className="m-5 bg-[#7CE3E1] h-[26px] w-[65px] rounded-[5px]">
-                        <Link to="/singIn">
+                        <Link to="/signIn">
                             Войти
                         </Link>
                     </button>
