@@ -4,13 +4,15 @@ import Search from "../components/Search";
 import Rates from "../components/Rates";
 import imgHome from "../components/img/Group 14.png";
 import Slider from "../components/Carousel";
+import Carousel from "../components/Carousel";
+import SimpleSlider from "../components/SliderSlick";
 
 
 function App () {
     return (
         <Layout>
             <Search/>
-            <Slider/>
+            <SimpleSlider/>
             <img src={imgHome}/>
             <Rates/>
         </Layout>

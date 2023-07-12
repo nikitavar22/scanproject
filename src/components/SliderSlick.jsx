@@ -24,30 +24,26 @@ let sliders = [
 ];
 
     const SimpleSlider = () => {
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: <img className="custom-prev-arrow w-[39px] h-[39px] " src={arrowsLeft} alt="Left" />,
-            nextArrow: <img className="custom-next-arrow w-[39px] h-[39px]" src={arrowsRight} alt="Right" />,
-        };
+
         const [getSlider, setSlider] = useState(sliders)
 
         return (
-            <Slider className="w-[1320px] mb-[50px] relative flex flex-col"{...settings}>
+            <div className="w-[1320px] mb-[50px] relative flex flex-col">
                 <div className="font-serif font-black text-[45px] leading-[54px] mb-[60px]">ПОЧЕМУ ИМЕННО МЫ</div>
-                <div className="flex flex-row items-center" >
+                <div className="flex flex-row items-center">
+                    <img className="w-[39px] h-[39px]" src={arrowsLeft}/>
+
                     {
                         getSlider.map((slider, index) => {
                             return (
-                                <SliderBlock key={index} slider={slider}/>
-                            );
-                        })
+                                    <SliderBlock key={index} slider={slider}/>
+                                );
+                            })
                     }
+
+                    <img className="w-[39px] h-[39px]" src={arrowsRight}/>
                 </div>
-            </Slider>
+            </div>
         );
     }
 
