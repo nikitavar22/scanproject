@@ -27,13 +27,13 @@ export default function Header () {
                 </li>
             </ul>
             <Routes>
-                <Route path="/" ></Route>
-                <Route path="/rates" ></Route>
-                <Route path="/faq" ></Route>
-                <Route path="/register" ></Route>
-                <Route path="/singIn" ></Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/rates" element={<Rates />} />
+                <Route path="/faq" element={<FAQ />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/signIn" element={<SignIn />} />
             </Routes>
-            <div >
+            <div>
                 <ul id="regOrSign" className="font-inter flex justify-between items-center mx-14">
                     <li className="m-5 opacity-40">
                         <Link to="/register">
@@ -52,4 +52,28 @@ export default function Header () {
             </div>
         </header>
     );
+}
+
+function Home() {
+    return <h1>Домашняя страница</h1>;
+}
+
+// Пример компонента Rates
+function Rates() {
+    return <h1>Страница тарифов</h1>;
+}
+
+// Пример компонента FAQ
+function FAQ() {
+    return <h1>Страница FAQ</h1>;
+}
+
+// Пример компонента Register
+function Register() {
+    return <h1>Страница регистрации</h1>;
+}
+
+// Пример компонента SignIn
+function SignIn() {
+    return <h1>Страница входа</h1>;
 }

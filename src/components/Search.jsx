@@ -1,7 +1,7 @@
 import imgSearch from "./img/Group 13.svg";
 import React from "react";
 
-export default function search () {
+export default function Search () {
     return (
         <search>
             <div className="w-[1320px] h-[620px] mt-[20px] relative flex">
