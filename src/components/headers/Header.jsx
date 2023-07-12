@@ -26,13 +26,6 @@ export default function Header () {
                     </Link>
                 </li>
             </ul>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/rates" element={<Rates />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/signIn" element={<SignIn />} />
-            </Routes>
             <div>
                 <ul id="regOrSign" className="font-inter flex justify-between items-center mx-14">
                     <li className="m-5 opacity-40">

@@ -1,18 +1,18 @@
 import React from 'react'
+import Home from "../components/Home"
+import SingIn from "../components/SingIn";
 import Layout from "../components/Layout";
-import Search from "../components/Search";
 import Rates from "../components/Rates";
-import imgHome from "../components/img/Group 14.png";
-import SimpleSlider from "../components/SliderSlick";
+import {Route, Routes} from "react-router-dom";
 
 
 function App () {
     return (
         <Layout>
-            <Search/>
-            <SimpleSlider/>
-            <img src={imgHome}/>
-            <Rates/>
+            <Routes>
+                <Route path="/" element={<Home/>} />
+                <Route path="/signIn" element={<SingIn />} />
+            </Routes>
         </Layout>
     );
 }

@@ -1,39 +1,39 @@
 import React from "react";
 
 
-export default function Block({ tarif }) {
+export default function Block({ rat }) {
     return (
-        <div className={'flex flex-col w-[415px] h-[540px] rounded-[10px] bg-white shadow-[0_0px_20px_-0px_rgba(0,0,0,0.2)] border-[2px] ' + tarif.border_class}>
-            <div id="name" className={'relative h-[132px] flex flex-col text-left rounded-t-lg ' + tarif.header_bg_class }>
+        <div className={'flex flex-col w-[415px] h-[540px] rounded-[10px] bg-white shadow-[0_0px_20px_-0px_rgba(0,0,0,0.2)] border-[2px] ' + rat.border_class}>
+            <div id="name" className={'relative h-[132px] flex flex-col text-left rounded-t-lg ' + rat.header_bg_class }>
                 <div className="m-[25px]">
-                    <div className={'text-[30px] ' + tarif.color_name }>
-                        { tarif.name }
+                    <div className={'text-[30px] ' + rat.color_name }>
+                        { rat.name }
                     </div>
 
-                    <p className={'text-[18px] ' + tarif.color_description }>
-                        { tarif.description }
+                    <p className={'text-[18px] ' + rat.color_description }>
+                        { rat.description }
                     </p>
                 </div>
 
-                <img className={'absolute  right-[20px] ' + tarif.header_top_img } src={ tarif.header_img } alt=""/>
+                <img className={'absolute  right-[20px] ' + rat.header_top_img } src={ rat.header_img } alt=""/>
             </div>
             <div id="price" className="relative h-[132px]">
                 <div className="m-[25px]">
                     <div className="flex flex-row items-center font-medium">
                         <div className="text-[30px] mr-[5px]">
-                            { tarif.price }
+                            { rat.price }
                         </div>
                         <div className="line-through opacity-50 text-[25px] ml-[5px]">
-                            { tarif.base_price }
+                            { rat.base_price }
                         </div>
                     </div>
                     <p className="text-[18px]">
-                        { tarif.plan_price }
+                        { rat.plan_price }
                     </p>
                 </div>
 
                 {
-                    tarif.active
+                    rat.active
                         ? (
                             <div className="right-[8px] top-[13px] absolute bg-[#3BA5E0] rounded-[10px] text-[14px] text-white h-[24px] w-[134px] flex items-center justify-center">
                                 Текущий тариф
@@ -47,7 +47,7 @@ export default function Block({ tarif }) {
                     В тариф входит:
                 </div>
                 {
-                    tarif.advantages.map((item, index) => {
+                    rat.advantages.map((item, index) => {
                         return (
                             <div key={index} className="flex items-center text-[18px] font-normal">
                                 <svg className="mr-[5px]" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/1999/xlink">
@@ -66,7 +66,7 @@ export default function Block({ tarif }) {
                 }
             </div>
             {
-                tarif.active
+                rat.active
                     ? (
                         <button id="buy" className="m-auto w-[355px] h-[59px] bg-[#D2D2D2] rounded-[5px] text-[20px] items-center justify-center">
                             Перейти в личный кабинет

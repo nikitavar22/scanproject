@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Block from "./Block";
 
-let tarifs = [
+let rat = [
     {
         "name": "Beginner",
         "color_name": "text-black",
@@ -62,7 +62,7 @@ let tarifs = [
 ]
 
 export default function Rates () {
-    const [getTarifs, setTarif] = useState(tarifs)
+    const [getRats, setRat] = useState(rat)
 
     return (
         <rates>
@@ -72,9 +72,9 @@ export default function Rates () {
                 </div>
                 <div className="flex flex-row justify-between">
                     {
-                        getTarifs.map((tarif, index) => {
+                        getRats.map((rat, index) => {
                             return (
-                                <Block key={index} tarif={tarif}/>
+                                <Block key={index} rat={rat}/>
                             );
                         })
                     }
