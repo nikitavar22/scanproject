@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import imgReg from './img/Characters.png';
 import imgForum from './img/icons/Group 1171274237.png';
 import imgGoogle from './img/icons/Google.png';
@@ -22,15 +23,27 @@ export default function SignIn() {
         setIsBorderActive(false);
     };
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        // Perform validation and login logic here
-        // For example, you can compare the entered username and password with the stored credentials
-        if (username === 'example' && password === 'password') {
-            setIsLoggedIn(true);
-        } else {
-            // Handle incorrect credentials case
-            alert('Invalid username or password');
+
+        try {
+            // Send a POST request to the server with the username and password
+            const response = await axios.post('/login', {
+                username,
+                password
+            });
+
+            // Check the response status or data to determine if login was successful
+            if (response.status === 200) {
+                setIsLoggedIn(true);
+            } else {
+                // Handle incorrect credentials case
+                alert('Неверное имя пользователя или пароль');
+            }
+        } catch (error) {
+            // Handle any error that occurred during the request
+            console.error(error);
+            alert('При входе в систему возникла ошибка');
         }
     };
 
