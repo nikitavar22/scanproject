@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import imgReg from './img/Characters.png';
-import imgForum from './img/icons/Group 1171274237.png';
-import imgGoogle from './img/icons/Google.png';
-import imgFacebook from './img/icons/Facebook.png';
-import imgYandex from './img/icons/Yandex.png';
+import imgReg from '../assets/img/Characters.png';
+import imgForum from '../assets/img/icons/Group 1171274237.png';
+import imgGoogle from '../assets/img/icons/Google.png';
+import imgFacebook from '../assets/img/icons/Facebook.png';
+import imgYandex from '../assets/img/icons/Yandex.png';
+import {redirect} from "react-router-dom";
 
 export default function SignIn() {
     const [isLogin, setIsLogin] = useState(true);
@@ -26,25 +27,19 @@ export default function SignIn() {
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        try {
-            // Send a POST request to the server with the username and password
-            const response = await axios.post('/login', {
-                username,
-                password
-            });
+        await axios.post('https://gateway.scan-interfax.ru/api/v1/account/login', {
+            "login": username,
+            "password": password
+        })
+            .then(response=> {
+                localStorage.setItem('token', response.data.accessToken)
 
-            // Check the response status or data to determine if login was successful
-            if (response.status === 200) {
-                setIsLoggedIn(true);
-            } else {
-                // Handle incorrect credentials case
-                alert('Неверное имя пользователя или пароль');
-            }
-        } catch (error) {
-            // Handle any error that occurred during the request
-            console.error(error);
-            alert('При входе в систему возникла ошибка');
-        }
+                redirect('/')
+            })
+
+            .catch(response => console.log(response.data));
+
+
     };
 
     if (isLoggedIn) {

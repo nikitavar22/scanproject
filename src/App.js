@@ -1,8 +1,7 @@
 import React from 'react'
-import Home from "../components/Home"
-import SingIn from "../components/SingIn";
-import Layout from "../components/Layout";
-import Rates from "../components/Rates";
+import Home from "./view/Home"
+import SingIn from "./view/SingIn";
+import Layout from "./components/Layout";
 import {Route, Routes} from "react-router-dom";
 
 

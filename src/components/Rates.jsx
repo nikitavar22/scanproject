@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Block from "./Block";
+import axios from "axios";
+
 
 let rat = [
     {
@@ -60,6 +62,13 @@ let rat = [
         "active": false
     }
 ]
+const getRat = async (e) => {
+    e.preventDefault();
+
+    await axios.get('https://gateway.scan-interfax.ru/api/v1/rat')
+        .then(response=> rat = response.data)
+        .catch(response => console.log(response.data));
+};
 
 export default function Rates () {
     const [getRats, setRat] = useState(rat)
