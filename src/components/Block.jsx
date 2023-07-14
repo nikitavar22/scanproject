@@ -73,7 +73,7 @@ export default function Block({ rat }) {
                         </button>
                     ) : (
                         <button id="buy" className="m-auto w-[355px] h-[59px] bg-[#5970FF] text-white rounded-[5px] text-[20px] items-center justify-center">
-                            Подробнее
+                            Подробнее...
                         </button>
                     )
             }
