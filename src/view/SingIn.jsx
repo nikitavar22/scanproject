@@ -24,6 +24,8 @@ export default function SignIn() {
         setIsBorderActive(false);
     };
 
+    let [ wrongAuth, setWrongAuth ] = useState(false)
+
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -34,12 +36,13 @@ export default function SignIn() {
             .then(response=> {
                 localStorage.setItem('token', response.data.accessToken)
 
+                setWrongAuth(false)
                 redirect('/')
             })
-
-            .catch(response => console.log(response.data));
-
-
+            .catch(response => {
+                setWrongAuth(true)
+                console.log(response.data)
+            });
     };
 
     if (isLoggedIn) {
@@ -119,6 +122,14 @@ export default function SignIn() {
                                 </button>
                             </div>
                         </div>
+                        {
+                            wrongAuth ? (
+                                <div>
+                                    Не правильный логин или пароль
+                                </div>
+                            ) : null
+                        }
+
                     </div>
                 </div>
                 <img className="absolute left-0 top-0" src={imgForum} alt="Forum" />
